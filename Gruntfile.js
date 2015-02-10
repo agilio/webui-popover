@@ -47,7 +47,8 @@ module.exports = function(grunt) {
 				dest: "dist/jquery.webui-popover.min.js"
 			},
 			options: {
-				banner: "<%= meta.banner %>"
+				banner: "<%= meta.banner %>",
+				sourceMap: true
 			}
 		},
 		less: {
