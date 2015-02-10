@@ -90,6 +90,10 @@
 						this.xhr = null;
 					}
 
+					if (this.$target.is(':not(:visible)')) {
+						return;
+					}
+
 					var e = $.Event('hide.' + pluginType);
 					this.$element.trigger(e);
 					if (this.$target){this.$target.removeClass('in').hide();}
