@@ -4,6 +4,7 @@
 		var pluginName = 'webuiPopover';
 		var pluginClass = 'webui-popover';
 		var pluginType = 'webui.popover';
+		var arrowClass = 'popover-arrow';
 		var	defaults = {
 					placement:'auto',
 					width:'auto',
@@ -21,7 +22,6 @@
 					cache:true,
 					multi:false,
 					arrow:true,
-					title:'',
 					content:'',
 					closeable:false,
 					padding:true,
@@ -30,7 +30,7 @@
 					constrains:null,
 					animation:null,
 					template:'<div class="webui-popover">'+
-								'<div class="arrow"></div>'+
+								'<div class="'+ arrowClass +'"></div>'+
 								'<div class="webui-popover-inner">'+
 									'<a href="#" class="close">x</a>'+
 									'<h3 class="webui-popover-title"></h3>'+
@@ -162,7 +162,7 @@
 
 					//init the popover and insert into the document body
 					if (!this.options.arrow){
-						$target.find('.arrow').remove();
+						$target.find('.'+arrowClass).remove();
 					}
 					$target.detach().css({ top: -1000, left: -1000, display: 'block' });
 					if (this.getAnimation()){
@@ -193,7 +193,7 @@
 						this.$target.css({'margin':0});
 					}
 					if (this.options.arrow){
-						var $arrow = this.$target.find('.arrow');
+						var $arrow = this.$target.find('.'+arrowClass);
 						$arrow.removeAttr('style');
 						if (postionInfo.arrowOffset){
 							$arrow.css(postionInfo.arrowOffset);

@@ -43,6 +43,7 @@
 @close-size:                20px;
 @close-color:               #000;
 
+@arrow-class: ~'.popover-arrow';
 
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
@@ -169,7 +170,7 @@
 }
 
 
-.webui-popover > .arrow{
+.webui-popover > @{arrow-class}{
   &,&:after{
 		position: absolute;
 		display: block;
@@ -180,18 +181,18 @@
   }	
 }
 
-.webui-popover > .arrow {
+.webui-popover > @{arrow-class} {
   border-width: @popover-arrow-outer-width;
 }
-.webui-popover > .arrow:after {
+.webui-popover > @{arrow-class}:after {
   border-width: @popover-arrow-width;
   content: "";
 }
 
 .webui-popover{
-  &.top >.arrow,
-  &.top-right >.arrow,
-  &.top-left >.arrow
+  &.top > @{arrow-class},
+  &.top-right > @{arrow-class},
+  &.top-left > @{arrow-class}
   {
  	  bottom: -@popover-arrow-outer-width;
 	  left: 50%;
@@ -203,13 +204,12 @@
 	  	  content: " ";
 	  	  bottom: 1px;
 		  margin-left: -@popover-arrow-width;
-		  border-top-color: @popover-arrow-color;
 		  border-bottom-width: 0;
 	  }
   }
-  &.right > .arrow,
-  &.right-top > .arrow,
-  &.right-bottom > .arrow {
+  &.right > @{arrow-class},
+  &.right-top > @{arrow-class},
+  &.right-bottom > @{arrow-class} {
     top: 50%;
     left: -@popover-arrow-outer-width;
     margin-top: -@popover-arrow-outer-width;
@@ -221,12 +221,11 @@
       left: 1px;
       bottom: -@popover-arrow-width;
       border-left-width: 0;
-      border-right-color: @popover-arrow-color;
     }
   }
-  &.bottom >.arrow,
-  &.bottom-right >.arrow,
-  &.bottom-left >.arrow
+  &.bottom > @{arrow-class},
+  &.bottom-right > @{arrow-class},
+  &.bottom-left > @{arrow-class}
   {
  	  top: -@popover-arrow-outer-width;
 	  left: 50%;
@@ -238,13 +237,12 @@
 	  	  content: " ";
 	  	  top: 1px;
 		  margin-left: -@popover-arrow-width;
-		  border-bottom-color: @popover-arrow-color;
 		  border-top-width: 0;
 	  }
   }
-  &.left > .arrow,
-  &.left-top > .arrow,
-  &.left-bottom > .arrow {
+  &.left > @{arrow-class},
+  &.left-top > @{arrow-class},
+  &.left-bottom > @{arrow-class} {
     top: 50%;
     right: -@popover-arrow-outer-width;
     margin-top: -@popover-arrow-outer-width;
@@ -255,37 +253,36 @@
       content: " ";
       right: 1px;
       border-right-width: 0;
-      border-left-color: @popover-arrow-color;
       bottom: -@popover-arrow-width;
     }
   }
 }
 
 .webui-popover-inverse{
-	&.top > .arrow,
-	&.top-left > .arrow,
-	&.top-right > .arrow{
+	&.top > @{arrow-class},
+	&.top-left > @{arrow-class},
+	&.top-right > @{arrow-class}{
 		&,&:after{
 			border-top-color: @popover-inverse-bg;
 		}
 	}
-	&.right > .arrow,
-  &.right-top > .arrow,
-  &.right-bottom > .arrow{
+	&.right > @{arrow-class},
+  &.right-top > @{arrow-class},
+  &.right-bottom > @{arrow-class}{
 		&,&:after{
 			border-right-color: @popover-inverse-bg;	
 		}
 	}
-	&.bottom > .arrow,
-	&.bottom-left > .arrow,
-	&.bottom-right > .arrow{
+	&.bottom > @{arrow-class},
+	&.bottom-left > @{arrow-class},
+	&.bottom-right > @{arrow-class}{
 		&,&:after{
 			border-bottom-color: @popover-inverse-bg;	
 		}
 	}
-	&.left > .arrow,
-  &.left-top > .arrow,
-  &.left-bottom > .arrow{
+	&.left > @{arrow-class},
+  &.left-top > @{arrow-class},
+  &.left-bottom > @{arrow-class}{
 		&,&:after{
 			border-left-color: @popover-inverse-bg;	
 		}
